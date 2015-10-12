@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc= sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+  <script src="bigtemp.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:700italic' rel='stylesheet' type='text/css'>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+  <link href="bigtext.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="">
+
+
+  <div class="modal fade" id="settings" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title">Options</h1>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <div class="btn-group btn-group-lg" role="group">
+              <button type="button" id="f" class="btn btn-success">&deg;F</button>
+              <button type="button" id="c" class="btn btn-danger">&deg;C</button>
+            </div>
+            <!--TODO: API and autorefresh-->
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id="close">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="aligner">
+    <div class="aligner-item">
+      <span id="temp"><i class="fa fa-cog fa-spin"></i></span>
+    </div>
+  </div>
+
+
+
+</body>
+
+</html>
