@@ -56,10 +56,9 @@ $(document).ready(function() {
     var lat = crd.latitude;
     var lon = crd.longitude;
     //console.log('Latitude : ' + lat + ' Longitude: ' + lon);
-    var data;
+    var url = 'http://node.thinkaliker.com:8888/?loc=' + lat + ',' + lon + "&callback=?";
 
-    jQuery.getJSON('http://node.thinkaliker.com:8888/?loc=' + lat + ',' + lon, function(data) {
-      var data = jquery.parseJSON(data);
+    $.getJSON(url, function(data) {
       console.log(lat + ", " + lon + " : " + data.temp);
       updateTemp(data.temp);
     });
