@@ -59,6 +59,7 @@ $(document).ready(function() {
       var data;
 
       $.getJSON('http://node.thinkaliker.com:8888/?loc=' + lat + ',' + lon , function(data) {
+          console.log(lat + ", " + lon + " : " + data.temp);
           updateTemp(data.temp);
           });
       }
