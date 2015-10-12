@@ -52,7 +52,7 @@ $(document).ready(function() {
 
   function updateTemp(curTemp) {
     temp = curTemp;
-    if (localStorage.getItem('fc')) {
+    if (localStorage.getItem('fc') == "true") {
       $('#temp').html(temp + '&deg;F');
     } else {
       //console.log(">mfw not american");
