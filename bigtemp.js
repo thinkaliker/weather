@@ -58,7 +58,7 @@ $(document).ready(function() {
       //console.log('Latitude : ' + lat + ' Longitude: ' + lon);
       var data;
 
-      $.getJSON('http://localhost:8888/?loc=' + lat + ',' + lon , function(data) {
+      $.getJSON('http://node.thinkaliker.com:8888/?loc=' + lat + ',' + lon , function(data) {
           updateTemp(data.temp);
           });
       }
