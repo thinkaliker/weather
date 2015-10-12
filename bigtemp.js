@@ -1,14 +1,31 @@
 $(document).ready(function() {
   var temp = 9999;
+  var apicheck;
+
+  if (localStorage.getItem('api') === null || localStorage.getItem('api') == "null") {
+    apicheck = false;
+  } else {
+    apicheck = true;
+  }
+
+
+  $("#apikey").change(function() {
+    if (!$("#apikey").val()) {
+      localStorage.setItem('api', null);
+      apicheck = false;
+    } else {
+      localStorage.setItem('api', $("#apikey").val());
+      apicheck = true;
+    }
+  });
+
+
   if (localStorage.getItem('fc') === null) {
-    console.log("first");
     localStorage.setItem('fc', true);
   } else {
     if (localStorage.getItem('fc') == "true") {
-      console.log("existing F");
       updateF();
     } else {
-      console.log("existing C");
       updateC();
     }
   }
@@ -76,11 +93,21 @@ $(document).ready(function() {
     var lat = crd.latitude;
     var lon = crd.longitude;
     var url = 'http://node.thinkaliker.com:8888/?loc=' + lat + ',' + lon + "&callback=?";
+    var urlapi = 'https://api.forecast.io/forecast/' + localStorage.getItem('api') + '/' + lat + ',' + lon + "?callback=?";
 
-    $.getJSON(url, function(data) {
-      console.log(lat + ", " + lon + " : " + data.temp);
-      updateTemp(data.temp);
-    });
+    if (apicheck) {
+      $.getJSON(urlapi, function(data) {
+        console.log(data);
+        console.log("API " + lat + ", " + lon + " : " + Math.round(data.currently.temperature));
+        updateTemp(Math.round(data.currently.temperature));
+      });
+    } else {
+      $.getJSON(url, function(data) {
+        console.log("Node " + lat + ", " + lon + " : " + data.temp);
+        updateTemp(data.temp);
+      });
+    }
+
   }
 
   function showError(error) {

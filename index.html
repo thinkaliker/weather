@@ -14,7 +14,7 @@
 
 <body class="">
   <div class="modal fade" id="settings" role="dialog">
-    <div class="modal-dialog modal-sm">
+    <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
           <h1 class="modal-title">Options</h1>
@@ -26,6 +26,17 @@
               <button type="button" id="c" class="btn btn-danger">&deg;C</button>
             </div>
             <!--TODO: API and autorefresh-->
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="APIKey">Check this box if you have a <a href="http://developer.forecast.io" target="_blank">Forecast.io API key</a>.
+                    (It's free! I only get 1000 calls a day, so I'd appreciate it.)</label>
+                  <div class="input-group" id="apigroup">
+                    <input type="text" id="apikey" class="form-control input-lg" placeholder="Forecast.io API key">
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="modal-footer">
