@@ -1,6 +1,6 @@
 $(document).ready(function() {
   var temp = 9999;
-  if (localStorage.getItem('fc').length == 0) {
+  if (localStorage.getItem('fc') === null) {
     console.log("first");
     localStorage.setItem('fc', true);
   } else {
