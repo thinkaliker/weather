@@ -55,7 +55,6 @@ $(document).ready(function() {
     var crd = pos.coords;
     var lat = crd.latitude;
     var lon = crd.longitude;
-    //console.log('Latitude : ' + lat + ' Longitude: ' + lon);
     var url = 'http://node.thinkaliker.com:8888/?loc=' + lat + ',' + lon + "&callback=?";
 
     $.getJSON(url, function(data) {
