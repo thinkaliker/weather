@@ -33,3 +33,10 @@ body {
   color: white;
   display: block;
 }
+#location {
+  position: absolute;
+  top: 0;
+  color: white;
+  margin-top: 20px;
+  margin-left: 20px;
+}

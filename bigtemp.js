@@ -9,9 +9,7 @@ $(document).ready(function() {
     apicheck = true;
   }
 
-  setTimeout(function(){
-    $("body").prepend('<div id="notcold" >make sure location is turned on</div>');
-  }, 5000);
+  $("body").prepend('<div id="location" >make sure location is turned on</div>');
 
 
   $("#apikey").change(function() {
@@ -95,6 +93,7 @@ $(document).ready(function() {
         updateTemp(data.temp);
       });
     }
+    $("#location").css("display", "none");
   }
 
   function showError(error) {
