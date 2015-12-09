@@ -9,6 +9,10 @@ $(document).ready(function() {
     apicheck = true;
   }
 
+  setTimeout(function(){
+    $("body").prepend('<a id="notcold" >not cold enough?</a>');
+  }, 10000);
+
 
   $("#apikey").change(function() {
     if (!$("#apikey").val()) {
@@ -85,7 +89,7 @@ $(document).ready(function() {
           chill = data.html;
           $("body").append(chill);
         } else {
-          $("body").prepend('<a id="notcold" >not cold enough?</a>')
+          $("body").prepend('<a id="notcold" >not cold enough?</a>');
         }
         console.log("Node " + lat + ", " + lon + " : " + data.temp);
         updateTemp(data.temp);
