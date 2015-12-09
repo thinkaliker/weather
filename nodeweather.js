@@ -45,13 +45,13 @@ function fetchPostalCode(callback, location, bing) {
       } catch (e) {
         return console.error(e);
       }
-      console.log(bingdata);
+      //console.log(bingdata);
 
       var parse2 = JSON.stringify(bingdata);
       var parse = JSON.parse(parse2);
 
       //console.log(parse);
-      console.log(parse.resourceSets[0]);
+      //console.log(parse.resourceSets[0]);
       var postal = parse.resourceSets[0].resources[0].address.postalCode;
 
       //      console.log("POSTAL: " + postal);

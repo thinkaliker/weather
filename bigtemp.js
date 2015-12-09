@@ -1,5 +1,5 @@
+var temp;
 $(document).ready(function() {
-  var temp = 9999;
   var apicheck;
   var chill;
 
@@ -41,19 +41,17 @@ $(document).ready(function() {
     });
   });
 
-  $("#c").click(function() {
+  $("body").on('click', "#c", function() {
     localStorage.setItem('fc', false);
     updateC();
-    if (temp != 9999) {
-      updateTemp(temp);
-    }
+    updateTemp(temp);
+    console.log("switching to SI");
   });
-  $("#f").click(function() {
+  $("body").on('click', "#f",function() {
     localStorage.setItem('fc', true);
     updateF();
-    if (temp != 9999) {
-      updateTemp(temp);
-    }
+    updateTemp(temp);
+    console.log("switching to US");
   });
 
   $("#close").click(function() {
@@ -145,7 +143,7 @@ function updateTemp(curTemp) {
     //console.log(">mfw not american");
     $('#temp').html(Math.round((temp - 32) * (5 / 9)) + '&deg;C');
   }
-  var hue = 4 * clamp(temp, 50, 90) - 10;
+  var hue = 4 * clamp(curTemp, 50, 90) - 10;
   $("body").css("background-color", "hsl(" + hue + ", 50%, 50% )");
 }
 
