@@ -10,8 +10,8 @@ $(document).ready(function() {
   }
 
   setTimeout(function(){
-    $("body").prepend('<a id="notcold" >not cold enough?</a>');
-  }, 10000);
+    $("body").prepend('<div id="notcold" >make sure location is turned on</div>');
+  }, 5000);
 
 
   $("#apikey").change(function() {
@@ -89,7 +89,7 @@ $(document).ready(function() {
           chill = data.html;
           $("body").append(chill);
         } else {
-          $("body").prepend('<a id="notcold" >not cold enough?</a>');
+          $("body").prepend('<div id="notcold" >not cold enough?</div>');
         }
         console.log("Node " + lat + ", " + lon + " : " + data.temp);
         updateTemp(data.temp);
@@ -122,11 +122,13 @@ $(document).ready(function() {
     var url = 'http://node.thinkaliker.com:8888/?loc=' + lat + ',' + lon + "&callback=?";
    //var url = 'http://localhost:8888?loc=' + lat + ',' + lon + "&callback=?";
     console.log("not cold enough, eh?");
+   $("#notcold").text("retrieving data...");
     $.getJSON(url, function(data) {
       chill = data.html;
       $("body").append(chill);
       console.log("COLD " + lat + ", " + lon + " : " + data.temp);
       updateTemp(data.temp);
+      $("#notcold").text("* somewhere in canada");
     });
   });
 
