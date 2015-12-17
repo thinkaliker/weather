@@ -52,7 +52,13 @@ function fetchPostalCode(callback, location, bing) {
 
       //console.log(parse);
       //console.log(parse.resourceSets[0]);
-      var postal = parse.resourceSets[0].resources[0].address.postalCode;
+      var postal;
+      try {
+        postal = parse.resourceSets[0].resources[0].address.postalCode;
+      } catch (e) {
+        console.error(e);
+        postal = "00000"; //default for errors
+      }
 
       //      console.log("POSTAL: " + postal);
     } else {
