@@ -17,14 +17,14 @@ fs.readFile('./api.key', 'utf8', function(err, data) {
   if (err) {
     return console.error(err);
   }
-  api = data;
+  api = process.env.API || data;
 });
 
 fs.readFile('./bing.key', 'utf8', function(err, data) {
   if (err) {
     return console.error(err);
   }
-  bing = data;
+  bing = process.env.BING || data;
 });
 
 fs.readFile('./load.html', 'utf8', function(err, data) {
