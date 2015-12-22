@@ -15,14 +15,14 @@ console.log("Server started!");
 //Provide your own API key
 fs.readFile('./api.key', 'utf8', function(err, data) {
   if (err) {
-    return console.error(err);
+    console.error(err);
   }
   api = process.env.API || data;
 });
 
 fs.readFile('./bing.key', 'utf8', function(err, data) {
   if (err) {
-    return console.error(err);
+    console.error(err);
   }
   bing = process.env.BING || data;
 });
