@@ -1,11 +1,13 @@
 Really Big Weather
 =======
 
-Uses [Forecast.io](http://forecast.io) for weather.
+Uses [Dark Sky API](http://darksky.net) for weather.
 
 Uses [Bing Maps API](https://www.bingmapsportal.com/) for reverse geocoding.
 
 Uses [Firebase](http://firebase.com) for database.
+
+Requires HTTPS, which does not function correctly in my current Github Pages setup. This may change in the future.
 
 Requires Node.JS. Uses request, firebase, log-timestamp packages (use npm to install).
 
