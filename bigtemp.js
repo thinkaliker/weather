@@ -70,7 +70,7 @@ $(document).ready(function() {
     var lon = crd.longitude;
     var url = 'http://mysterious-headland-9915.herokuapp.com/?loc=' + lat + ',' + lon + "&callback=?";
     //var url = 'http://localhost:8888/?loc=' + lat + ',' + lon + "&callback=?";
-    var urlapi = 'https://api.forecast.io/forecast/' + localStorage.getItem('api') + '/' + lat + ',' + lon + "?callback=?";
+    var urlapi = 'https://api.darksky.net/forecast/' + localStorage.getItem('api') + '/' + lat + ',' + lon + "?callback=?";
 
     if (apicheck) {
       $.getJSON(urlapi, function(data) {

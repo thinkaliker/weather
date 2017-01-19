@@ -71,7 +71,7 @@ function fetchPostalCode(callback, location, bing) {
 
 function fetchForecast(callback, location, tempref, foundpostal) {
   //Fetch from forecast.io
-  var fetchurl = 'https://api.forecast.io/forecast/' + api + '/' + location;
+  var fetchurl = 'https://api.darksky.net/forecast/' + api + '/' + location;
   request(fetchurl, function(error, response, body) {
     if (!error && response.statusCode == 200) {
       var data = JSON.parse(body);
