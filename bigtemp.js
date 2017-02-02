@@ -68,7 +68,7 @@ $(document).ready(function() {
     var crd = pos.coords;
     var lat = crd.latitude;
     var lon = crd.longitude;
-    var url = 'http://mysterious-headland-9915.herokuapp.com/?loc=' + lat + ',' + lon + "&callback=?";
+    var url = 'https://mysterious-headland-9915.herokuapp.com/?loc=' + lat + ',' + lon + "&callback=?";
     //var url = 'http://localhost:8888/?loc=' + lat + ',' + lon + "&callback=?";
     var urlapi = 'https://api.darksky.net/forecast/' + localStorage.getItem('api') + '/' + lat + ',' + lon + "?callback=?";
 
@@ -116,7 +116,7 @@ $(document).ready(function() {
     //somewhere in canada
     var lat = 71.985400;
     var lon = -125.236280;
-    var url = 'http://mysterious-headland-9915.herokuapp.com/?loc=' + lat + ',' + lon + "&callback=?";
+    var url = 'https://mysterious-headland-9915.herokuapp.com/?loc=' + lat + ',' + lon + "&callback=?";
    //var url = 'http://localhost:8888?loc=' + lat + ',' + lon + "&callback=?";
     console.log("not cold enough, eh?");
    $("#notcold").text("retrieving data...");
